@@ -1,10 +1,10 @@
-"C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.1/bin/ninja/win/ninja.exe" -G Ninja -S D:\C\Gateway -B D:\C\Gateway\cmake-build-debug
--- The C compiler identification is GNU 11.2.0
+C:\Users\TaoGe\AppData\Local\JetBrains\CLion2022.1\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/cygdrive/c/Program Files/JetBrains/CLion 2022.1/bin/ninja/cygwin/ninja.exe" -G Ninja -S /cygdrive/d/C/GW -B /cygdrive/d/C/GW/cmake-build-debug
+-- The C compiler identification is GNU 11.3.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Program Files/JetBrains/CLion 2022.1/bin/mingw/bin/gcc.exe - skipped
+-- Check for working C compiler: /usr/bin/cc - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: D:/C/Gateway/cmake-build-debug
+-- Build files have been written to: /cygdrive/d/C/GW/cmake-build-debug
