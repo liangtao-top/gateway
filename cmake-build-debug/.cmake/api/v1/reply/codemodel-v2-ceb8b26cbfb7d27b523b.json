@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.22"
@@ -15,8 +15,7 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -28,11 +27,10 @@
 					[
 						0
 					],
-					"name" : "Gateway",
+					"name" : "GW",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -40,16 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "Gateway::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Gateway-Debug-4850f21251762c481f21.json",
-					"name" : "Gateway",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "library::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-library-Debug-537740c8623d6b6fafb6.json",
-					"name" : "library",
+					"id" : "GW::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GW-Debug-1f4d684d90355ea0558d.json",
+					"name" : "GW",
 					"projectIndex" : 0
 				}
 			]
@@ -58,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/C/Gateway/cmake-build-debug",
-		"source" : "D:/C/Gateway"
+		"build" : "/cygdrive/d/C/GW/cmake-build-debug",
+		"source" : "/cygdrive/d/C/GW"
 	},
 	"version" : 
 	{

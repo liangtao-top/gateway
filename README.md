@@ -1,2 +1,2 @@
 # Gateway
-C语言socket网关
+C语言HTTP网关

@@ -1,4 +1,3 @@
-D:/C/Gateway/cmake-build-debug/CMakeFiles/Gateway.dir
-D:/C/Gateway/cmake-build-debug/CMakeFiles/library.dir
-D:/C/Gateway/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/C/Gateway/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/d/C/GW/cmake-build-debug/CMakeFiles/GW.dir
+/cygdrive/d/C/GW/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/d/C/GW/cmake-build-debug/CMakeFiles/rebuild_cache.dir
