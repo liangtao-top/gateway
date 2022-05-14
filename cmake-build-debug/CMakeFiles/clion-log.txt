@@ -1,10 +1,4 @@
-C:\Users\TaoGe\AppData\Local\JetBrains\CLion2022.1\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/cygdrive/c/Program Files/JetBrains/CLion 2022.1/bin/ninja/cygwin/ninja.exe" -G Ninja -S /cygdrive/d/C/GW -B /cygdrive/d/C/GW/cmake-build-debug
--- The C compiler identification is GNU 11.3.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
+C:\WINDOWS\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /mnt/d/C/GW/cmake-build-debug && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S /mnt/d/C/GW -B /mnt/d/C/GW/cmake-build-debug; exitcode=$?; sleep 0.001; (exit $exitcode)"
 -- Configuring done
 -- Generating done
--- Build files have been written to: /cygdrive/d/C/GW/cmake-build-debug
+-- Build files have been written to: /mnt/d/C/GW/cmake-build-debug

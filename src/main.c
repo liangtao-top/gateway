@@ -141,16 +141,16 @@ int create_server(unsigned int port) {
     if (server_fd == -1) {
         EXIT("create socket fail");
     }
+    // 设置套接字选项避免地址使用错误
+    int opt_val = 1;
+    if ((setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &opt_val, sizeof(opt_val))) < 0) {
+        EXIT("setsockopt failed");
+    }
     struct sockaddr_in server;
     memset(&server, 0, sizeof(server));
     server.sin_family = AF_INET;
     server.sin_port = htons(port);
     server.sin_addr.s_addr = INADDR_ANY;
-    // 设置套接字选项避免地址使用错误
-    int on = 1;
-    if ((setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on))) < 0) {
-        EXIT("setsockopt failed");
-    }
     // 将套接字绑定到服务器的网络地址上
     if (bind(server_fd, (struct sockaddr *) &server, sizeof(server)) == -1) {
         EXIT("bind fail");
@@ -192,19 +192,19 @@ int main(int argc, char *argv[]) {
     server_fd = create_server(port);
     LOG("Server started, listen port %d", port);
     while (running) {
-        // 等待客户端连接请求到达
-        conn_fd = accept(server_fd, (struct sockaddr *) &client, &client_len);
-        LOG("conn_fd %d", conn_fd);
-        if (conn_fd < 0) {
-            EXIT("accept client socket failed");
-        }
-        if (pthread_create(&tid, NULL, process, &conn_fd) == 0) {
-            unsigned char *ip = (unsigned char *) &client.sin_addr.s_addr;
-            unsigned short sinPort = client.sin_port;
-            LOG("request %u.%u.%u.%u:%5u", ip[0], ip[1], ip[2], ip[3], sinPort);
-        } else {
-            EXIT("create thread fail");
-        }
+    // 等待客户端连接请求到达
+    conn_fd = accept(server_fd, (struct sockaddr *) &client, &client_len);
+    LOG("conn_fd %d", conn_fd);
+    if (conn_fd < 0) {
+        EXIT("accept client socket failed");
+    }
+    if (pthread_create(&tid, NULL, process, &conn_fd) == 0) {
+        unsigned char *ip = (unsigned char *) &client.sin_addr.s_addr;
+        unsigned short sinPort = client.sin_port;
+        LOG("request %u.%u.%u.%u:%5u", ip[0], ip[1], ip[2], ip[3], sinPort);
+    } else {
+        EXIT("create thread fail");
+    }
     }
     return 0;
 }

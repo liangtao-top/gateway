@@ -1,4 +1,3 @@
-ToolSet: 3.3.4 (local)@C:\cygwin64
-Options: 
+ToolSet: Ubuntu 20.04.4 LTS (local)Options: 
 
-Options:-DCMAKE_MAKE_PROGRAM=/cygdrive/c/Program Files/JetBrains/CLion 2022.1/bin/ninja/cygwin/ninja.exe
+Options:
