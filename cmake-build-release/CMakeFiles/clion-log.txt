@@ -1,0 +1,4 @@
+C:\WINDOWS\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /mnt/d/C/GW/cmake-build-release && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Release -G 'CodeBlocks - Unix Makefiles' -S /mnt/d/C/GW -B /mnt/d/C/GW/cmake-build-release; exitcode=$?; sleep 0.001; (exit $exitcode)"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/d/C/GW/cmake-build-release

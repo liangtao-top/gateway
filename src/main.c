@@ -1,11 +1,7 @@
-#include <stdio.h>
 //
-//int main() {
-//    printf("Hello, World!\n");
-//    return 0;
-//}
-
-
+// Created by TaoGe on 2022/5/14.
+//
+#include <stdio.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -165,7 +161,9 @@ int create_server(unsigned int port) {
 int running = 1;
 
 void before_exiting() {
+    // 函数内声明变量 running 为外部变量
     extern int running;
+    // 给外部变量（全局变量）赋值
     running = 0;
     LOG("Server exiting");
 }
@@ -185,27 +183,32 @@ int main(int argc, char *argv[]) {
     }
 
     int server_fd, conn_fd;
-    pthread_t tid;
     struct sockaddr_in client;
     socklen_t client_len = sizeof(client);
 
     server_fd = create_server(port);
-    LOG("Server started, listen port %d", port);
+    LOG("Server started server_fd %d, listen port %d", server_fd, port);
+    LOG("gateway pid %d", getppid());
+    LOG("system cpu num is %ld, enable num is %ld", sysconf(_SC_NPROCESSORS_CONF), sysconf(_SC_NPROCESSORS_ONLN));
+
     while (running) {
-    // 等待客户端连接请求到达
-    conn_fd = accept(server_fd, (struct sockaddr *) &client, &client_len);
-    LOG("conn_fd %d", conn_fd);
-    if (conn_fd < 0) {
-        EXIT("accept client socket failed");
-    }
-    if (pthread_create(&tid, NULL, process, &conn_fd) == 0) {
-        unsigned char *ip = (unsigned char *) &client.sin_addr.s_addr;
-        unsigned short sinPort = client.sin_port;
-        LOG("request %u.%u.%u.%u:%5u", ip[0], ip[1], ip[2], ip[3], sinPort);
-    } else {
-        EXIT("create thread fail");
-    }
+        // 等待客户端连接请求到达
+        conn_fd = accept(server_fd, (struct sockaddr *) &client, &client_len);
+        LOG("conn_fd %d", conn_fd);
+        if (conn_fd < 0) {
+            EXIT("accept client socket failed");
+        }
+        pthread_t tid;
+        int res = pthread_create(&tid, NULL, process, &conn_fd);
+        if (res == 0) {
+            LOG("thread_id %lu", tid);
+            unsigned char *ip = (unsigned char *) &client.sin_addr.s_addr;
+            unsigned short sinPort = client.sin_port;
+            LOG("request %u.%u.%u.%u:%5u", ip[0], ip[1], ip[2], ip[3], sinPort);
+            pthread_join(tid, NULL);
+        } else {
+            EXIT("create thread fail");
+        }
     }
     return 0;
 }
-

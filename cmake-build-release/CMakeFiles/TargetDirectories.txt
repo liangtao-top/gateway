@@ -1,0 +1,4 @@
+/mnt/d/C/GW/cmake-build-release/CMakeFiles/GW.dir
+/mnt/d/C/GW/cmake-build-release/CMakeFiles/pool.dir
+/mnt/d/C/GW/cmake-build-release/CMakeFiles/edit_cache.dir
+/mnt/d/C/GW/cmake-build-release/CMakeFiles/rebuild_cache.dir

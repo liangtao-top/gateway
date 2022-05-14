@@ -6,6 +6,10 @@ set(CMAKE_C_STANDARD 23)
 
 add_executable(GW src/main.c)
 
+add_executable(pool src/pool.c)
+
 find_package(Threads)
 
 target_link_libraries(GW ${CMAKE_THREAD_LIBS_INIT})
+
+target_link_libraries(pool ${CMAKE_THREAD_LIBS_INIT})
