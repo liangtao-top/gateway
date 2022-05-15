@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG CMakeFiles/pool.dir/src/pool.c.o -o pool  -lpthread 

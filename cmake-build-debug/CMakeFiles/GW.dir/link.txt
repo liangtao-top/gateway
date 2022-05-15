@@ -1,1 +1,0 @@
-/usr/bin/cc -g CMakeFiles/GW.dir/src/main.c.o -o GW  -lpthread 

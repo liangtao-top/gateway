@@ -1,4 +1,0 @@
-/mnt/d/C/GW/cmake-build-debug/CMakeFiles/GW.dir
-/mnt/d/C/GW/cmake-build-debug/CMakeFiles/pool.dir
-/mnt/d/C/GW/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/d/C/GW/cmake-build-debug/CMakeFiles/rebuild_cache.dir

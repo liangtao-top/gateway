@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG CMakeFiles/GW.dir/src/main.c.o -o GW  -lpthread 
